@@ -4,7 +4,10 @@
   "description": "SVG and PNG renders of all countries' flags.",
   "scripts": {
     "build-pngs": "node scripts/build-pngs.js",
-    "build-100-250-1000-pngs": "node scripts/build-pngs.js 100: && node scripts/build-pngs.js 250: && node scripts/build-pngs.js 1000:"
+    "build-hq-pngs": "node scripts/build-hq-pngs.js",
+    "build-100-250-1000-pngs": "node scripts/build-pngs.js 100: && node scripts/build-pngs.js 250: && node scripts/build-pngs.js 1000:",
+    "build-hq-presets": "node scripts/build-hq-pngs.js web && node scripts/build-hq-pngs.js hd && node scripts/build-hq-pngs.js 4k",
+    "build-print-quality": "node scripts/build-hq-pngs.js print"
   },
   "repository": {
     "type": "git",
@@ -21,5 +24,12 @@
   "bugs": {
     "url": "https://github.com/hampusborgos/country-flags/issues"
   },
-  "homepage": "https://hampusborgos.github.io/country-flags/"
+  "homepage": "https://hampusborgos.github.io/country-flags/",
+  "devDependencies": {
+    "sharp": "^0.33.5"
+  },
+  "optionalDependencies": {
+    "imagemin-optipng-cli": "^8.0.0",
+    "imagemin-pngquant-cli": "^3.0.0"
+  }
 }
